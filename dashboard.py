@@ -15,13 +15,16 @@ os.system("apt-get update -y && apt-get install -y libgl1 libglib2.0-0")
 # ==========================
 # 🔹 Load Models
 # ==========================
+
 @st.cache_resource
 def load_models():
-    yolo_model = YOLO("model/best.pt")  
-    classifier = tf.keras.models.load_model("model/Raudhatul Husna_laporan2.h5")  
+    yolo_model = YOLO("model/best.pt")
+    # GANTI BARIS INI
+    classifier = tf.keras.models.load_model("model/Raudhatul Husna_laporan2.h5", safe_mode=False) 
     return yolo_model, classifier
 
 yolo_model, classifier = load_models()
+
 
 # ==========================
 # Session state
