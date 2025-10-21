@@ -9,15 +9,12 @@ import torch
 
 
 # ==========================
-# Load Models
-# ==========================
-import tensorflow as tf
-
 @st.cache_resource
 def load_models():
-    yolo_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
-    classifier = tf.keras.models.load_model("model/Raudhatul Husna_laporan2.h5", compile=False)
+    yolo_model = YOLO("model/best.pt")
+    classifier = tf.keras.models.load_model("model/Raudhatul Husna_laporan2.h5")
     return yolo_model, classifier
+
 
 yolo_model, classifier = load_models()
 
