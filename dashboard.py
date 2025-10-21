@@ -17,8 +17,8 @@ os.system("apt-get update -y && apt-get install -y libgl1 libglib2.0-0")
 # ==========================
 @st.cache_resource
 def load_models():
-    yolo_model = YOLO("model/Siti Marlina_Laporan 4.pt")  
-    classifier = tf.keras.models.load_model("model/Siti Marlina_laporan 2 (1).h5")  
+    yolo_model = YOLO("model/best.pt")  
+    classifier = tf.keras.models.load_model("model/Raudhatul Husna_laporan2.h5")  
     return yolo_model, classifier
 
 yolo_model, classifier = load_models()
